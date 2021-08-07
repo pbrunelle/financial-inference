@@ -34,6 +34,11 @@ class Model:
             o = segments[0]
         for p in path:
             o = o[p]
+        if isinstance(o, dict):
+            if "total" in o:
+                o = o["total"]
+            elif "value" in o:
+                o = o["value"]
         return fn(o)
 
     def __call__(self, name, **kwargs):
