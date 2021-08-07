@@ -23,8 +23,8 @@ def vgr_model():
         ("diluted eps", 0.61),
     ]
 )
-def test_call(vgr_model, name, expected):
-    assert expected == vgr_model(name)
+def test_call_quarter(vgr_model, name, expected):
+    assert expected == vgr_model(name, quarter=2)
 
 
 @pytest.mark.parametrize(
@@ -36,5 +36,30 @@ def test_call(vgr_model, name, expected):
         ("cogs", "real estate", 294265000.0),
     ]
 )
-def test_call_segment(vgr_model, name, segment, expected):
-    assert expected == vgr_model(name, segment=segment)
+def test_call_segment_quarter(vgr_model, name, segment, expected):
+    assert expected == vgr_model(name, quarter=2, segment=segment)
+
+
+@pytest.mark.parametrize(
+    "name,expected",
+    [
+        ("revenue", 1273293000.0),
+        ("cogs", 863952000.0),
+        ("diluted eps", 0.81),
+    ]
+)
+def test_call_half(vgr_model, name, expected):
+    assert expected == vgr_model(name, half=1)
+
+
+@pytest.mark.parametrize(
+    "name,segment,expected",
+    [
+        ("revenue", "tobacco", 597959000.0),
+        ("revenue", "real estate", 675334000.0),
+        ("cogs", "tobacco", 370176000.0),
+        ("cogs", "real estate", 493776000.0),
+    ]
+)
+def test_call_segment_half(vgr_model, name, segment, expected):
+    assert expected == vgr_model(name, half=1, segment=segment)

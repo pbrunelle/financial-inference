@@ -18,9 +18,16 @@ class Model:
             self.obj = json.load(fin)
             self.period_data = self.obj["data"]
 
-    def value(self, path, segment=None, fn=float):
-        assert len(self.period_data) == 1
-        o = self.period_data[0]
+    def value(self, path, year=None, quarter=None, half=None, segment=None, fn=float):
+        o = self.period_data
+        if year:
+            o = [x for x in o if x.get("period", {}).get("year") == year]
+        if quarter:
+            o = [x for x in o if x.get("period", {}).get("quarter") == quarter]
+        if half:
+            o = [x for x in o if x.get("period", {}).get("half") == half]
+        assert len(o) == 1, f"Expected 1 matching period got {len(o)}"
+        o = o[0]
         if segment:
             segments = [x for x in o["segments"] if x["segment"] == segment]
             assert len(segments) == 1

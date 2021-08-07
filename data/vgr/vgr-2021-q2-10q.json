@@ -48,6 +48,51 @@
           }
         }
       ]
+    },
+    {
+      "period": {
+        "year": 2021,
+        "half": 1,
+        "end date": "June 30, 2021"
+      },
+      "income statement": {
+        "revenue": "1_273_293_000",
+        "cogs": "863_952_000",
+        "operating expenses": "182_057_000",
+        "operating income": "227_279_000",
+        "interest expense": "56_866_000",
+        "loss on extinguishment of debt": "21_362_000",
+        "equity in earnings from investments": "1_518_000",
+        "equity in earnings from real estate ventures": "18_274_000",
+        "net other income": "8_332_000",
+        "income before income taxes": "177_175_000",
+        "income tax": "51_913_000",
+        "net income": "125_262_000",
+        "net income attributable to owners": "125_262_000",
+        "net income per basic share": 0.81,
+        "net income per diluted share": 0.81
+      },
+      "balance sheet": {
+      },
+      "cash flow statement": {
+      },
+      "segments": [
+        {
+          "segment": "tobacco",
+          "income statement": {
+            "revenue": "597_959_000",
+            "cogs": "370_176_000",
+            "federal excise taxes": "216_449_000"
+          }
+        },
+        {
+          "segment": "real estate",
+          "income statement": {
+            "revenue": "675_334_000",
+            "cogs": "493_776_000"
+          }
+        }
+      ]
     }
   ]
 }
