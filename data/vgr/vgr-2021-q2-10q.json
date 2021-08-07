@@ -1,0 +1,146 @@
+{
+  "company": {
+    "ticker": "VGR",
+    "name": "Vector Group Ltd.",
+    "currency": "USD"
+  },
+  "data": [
+    {
+      "period": {
+        "year": 2021,
+        "quarter": 2,
+        "end date": "June 30, 2021"
+      },
+      "income statement": {
+        "revenue": "729_529_000",
+        "cogs": "500_410_000",
+        "operating expenses": "92_043_000",
+        "depreciation and amortization": "4_089_000",
+        "operating income": "137_076_000",
+        "interest expense": "28_115_000",
+        "equity in earnings from investments": "941_000",
+        "equity in earnings from real estate ventures": "16_685_000",
+        "net other income": "5_578_000",
+        "income before income taxes": "132_165_000",
+        "income tax": "38_860_000",
+        "net income": "93_305_000",
+        "net income attributable to owners": "93_305_000",
+        "net income per basic share": 0.61,
+        "net income per diluted share": 0.61,
+        "weighted average basic shares": "152_285_182",
+        "weighted average diluted shares": "152_567_495"
+      },
+      "balance sheet": {
+        "debt": {
+          "5.75% Senior Secured Notes due 2029": "875_000_000",
+          "10.5% Senior Notes due 2026": "555_000_000",
+          "total": "1_448_900_000"
+        }
+      },
+      "cash flow statement": {
+      },
+      "segments": [
+        {
+          "segment": "tobacco",
+          "income statement": {
+            "revenue": "329_496_000",
+            "cogs": {
+              "federal excise taxes": "118_735_000",
+              "MSA expense": "46_626_000",
+              "manufacturing overhead, raw materials and labor": "33_277_000",
+              "FDA expense": "5_622_000",
+              "customer shipping and handling": "1_885_000",
+              "total": "206_145_000"
+            },
+            "gross profit": "123_351_000",
+            "gross margin": {
+              "comment": "excluding federal excise taxes",
+              "value": "0.585"
+            },
+            "operating expenses": "20_172_000",
+            "liability expenses": "1_542_000",
+            "depreciation and amortization": "1_697_000",
+            "operating income": "103_179_000"
+          },
+          "volume": {
+            "wholesale cigarette": "2_360_000_000",
+            "MSA retail market share": "0.0409"
+          }
+        },
+        {
+          "segment": "real estate",
+          "income statement": {
+            "revenue": "400_033_000",
+            "cogs": "294_265_000",
+            "operating income": "42_362_000",
+            "depreciation and amortization": "2_158_000"
+          }
+        }
+      ]
+    },
+    {
+      "period": {
+        "year": 2021,
+        "half": 1,
+        "end date": "June 30, 2021"
+      },
+      "income statement": {
+        "revenue": "1_273_293_000",
+        "cogs": "863_952_000",
+        "operating expenses": "182_057_000",
+        "depreciation and amortization": "8_268_000",
+        "operating income": "227_279_000",
+        "interest expense": "56_866_000",
+        "loss on extinguishment of debt": "21_362_000",
+        "equity in earnings from investments": "1_518_000",
+        "equity in earnings from real estate ventures": "18_274_000",
+        "net other income": "8_332_000",
+        "income before income taxes": "177_175_000",
+        "income tax": "51_913_000",
+        "net income": "125_262_000",
+        "net income attributable to owners": "125_262_000",
+        "net income per basic share": 0.81,
+        "net income per diluted share": 0.81,
+        "weighted average basic shares": "152_267_410",
+        "weighted average diluted shares": "152_473_791"
+      },
+      "cash flow statement": {
+      },
+      "segments": [
+        {
+          "segment": "tobacco",
+          "income statement": {
+            "revenue": "597_959_000",
+            "cogs": {
+              "federal excise taxes": "216_449_000",
+              "MSA expense": "78_194_000",
+              "manufacturing overhead, raw materials and labor": "60_538_000",
+              "FDA expense": "11_694_000",
+              "customer shipping and handling": "3_301_000",
+              "total": "370_176_000"
+            },
+            "gross profit": "227_783_000",
+            "gross margin": "0.597",
+            "operating expenses": "43_000_000",
+            "liability expenses": "3_067_000",
+            "depreciation and amortization": "3_457_000",
+            "operating income": "184_778_000"
+          },
+          "volume": {
+            "wholesale cigarette": "4_300_000_000",
+            "MSA retail market share": "0.0413"
+          }
+        },
+        {
+          "segment": "real estate",
+          "income statement": {
+            "revenue": "675_334_000",
+            "cogs": "493_776_000",
+            "operating income": "57_622_000",
+            "depreciation and amortization": "4_346_000"
+          }
+        }
+      ]
+    }
+  ]
+}
