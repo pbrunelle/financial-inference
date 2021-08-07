@@ -7,6 +7,12 @@ import json
 
 class Model:
 
+    ModelMapping = {
+        "revenue": {"path": ["income statement", "revenue"]},
+        "cogs": {"path": ["income statement", "cogs"]},
+        "diluted eps": {"path": ["income statement", "net income per diluted share"]},
+    }
+
     def __init__(self, json_path):
         with open(json_path, "r") as fin:
             self.obj = json.load(fin)
@@ -23,10 +29,5 @@ class Model:
             o = o[p]
         return fn(o)
 
-    def revenue(self, **kwargs):
-        return self.value(path=["income statement", "revenue"], **kwargs)
-
     def __call__(self, name, **kwargs):
-        if name == "revenue":
-            return self.value(path=["income statement", "revenue"], **kwargs)
-        assert False
+        return self.value(**Model.ModelMapping[name], **kwargs)

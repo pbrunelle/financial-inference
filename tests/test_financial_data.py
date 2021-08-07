@@ -15,47 +15,26 @@ def vgr_model():
     yield Model(json_path="data/vgr/vgr-2021-q2-10q.json")
 
 
-def test_revenue(vgr_model):
-    # GIVEN
-    # WHEN
-    got = vgr_model.revenue()
-    # THEN
-    assert 729529000.0 == got
+@pytest.mark.parametrize(
+    "name,expected",
+    [
+        ("revenue", 729529000.0),
+        ("cogs", 500410000.0),
+        ("diluted eps", 0.61),
+    ]
+)
+def test_call(vgr_model, name, expected):
+    assert expected == vgr_model(name)
 
 
 @pytest.mark.parametrize(
-    "segment,expected",
+    "name,segment,expected",
     [
-        ("tobacco", 329496000.0),
-        ("real estate", 400033000.0),
+        ("revenue", "tobacco", 329496000.0),
+        ("revenue", "real estate", 400033000.0),
+        ("cogs", "tobacco", 206145000.0),
+        ("cogs", "real estate", 294265000.0),
     ]
 )
-def test_revenue_segment(vgr_model, segment, expected):
-    # GIVEN
-    # WHEN
-    got = vgr_model.revenue(segment=segment)
-    # THEN
-    assert expected == got
-
-
-def test_call_revenue(vgr_model):
-    # GIVEN
-    # WHEN
-    got = vgr_model("revenue")
-    # THEN
-    assert 729529000.0 == got
-
-
-@pytest.mark.parametrize(
-    "segment,expected",
-    [
-        ("tobacco", 329496000.0),
-        ("real estate", 400033000.0),
-    ]
-)
-def test_call_revenue_segment(vgr_model, segment, expected):
-    # GIVEN
-    # WHEN
-    got = vgr_model("revenue", segment=segment)
-    # THEN
-    assert expected == got
+def test_call_segment(vgr_model, name, segment, expected):
+    assert expected == vgr_model(name, segment=segment)
