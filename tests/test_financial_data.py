@@ -1,5 +1,24 @@
 from financial_inference.model import Model
+import pytest
 
-def test_1():
+
+def test_read():
+    # GIVEN
+    # WHEN
     model = Model(json_path="data/vgr/vgr-2021-q2-10q.json")
+    # THEN
     assert model.obj["company"]["ticker"] == "VGR"
+
+
+@pytest.fixture
+def vgr_model():
+    yield Model(json_path="data/vgr/vgr-2021-q2-10q.json")
+
+
+def test_revenue(vgr_model):
+    # GIVEN
+    # WHEN
+    got = vgr_model.revenue()
+    # THEN
+    assert 729529000.0 == got
+
