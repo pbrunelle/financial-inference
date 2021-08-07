@@ -1,0 +1,53 @@
+{
+  "company": {
+    "ticker": "VGR",
+    "name": "Vector Group Ltd.",
+    "currency": "USD"
+  },
+  "data": [
+    {
+      "period": {
+        "year": 2021,
+        "quarter": 2,
+        "end date": "June 30, 2021"
+      },
+      "income statement": {
+        "revenue": 729_529_000,
+        "cogs": 500_410_000,
+        "operating expenses": 92_043_000,
+        "operating income": 137_076_000,
+        "interest expense": 28_115_000,
+        "equity in earnings from investments": 941_000,
+        "equity in earnings from real estate ventures": 16_685_000,
+        "net other income": 5_578_000,
+        "income before income taxes": 132_165_000,
+        "income tax": 38_860_000,
+        "net income": 93_305_000,
+        "net income attributable to owners": 93_305_000,
+        "net income per basic share": 0.61,
+        "net income per diluted share": 0.61
+      },
+      "balance sheet": {
+      },
+      "cash flow statement": {
+      },
+      "segments": [
+        {
+          "segment": "tobacco",
+          "income statement": {
+            "revenue": 329_496_000,
+            "cogs": 206_145_000,
+            "federal excise taxes": 118_735_000
+          }
+        },
+        {
+          "segment": "real estate",
+          "income statement": {
+            "revenue": 400_033_000,
+            "cogs": 294_265_000
+          }
+        }
+      ]
+    }
+  ]
+}
