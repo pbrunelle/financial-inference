@@ -13,6 +13,7 @@ class Model:
             self.period_data = self.obj["data"]
 
     def value(self, path, segment=None, fn=float):
+        assert len(self.period_data) == 1
         o = self.period_data[0]
         if segment:
             segments = [x for x in o["segments"] if x["segment"] == segment]
@@ -24,3 +25,8 @@ class Model:
 
     def revenue(self, **kwargs):
         return self.value(path=["income statement", "revenue"], **kwargs)
+
+    def __call__(self, name, **kwargs):
+        if name == "revenue":
+            return self.value(path=["income statement", "revenue"], **kwargs)
+        assert False

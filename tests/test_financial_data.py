@@ -36,3 +36,26 @@ def test_revenue_segment(vgr_model, segment, expected):
     got = vgr_model.revenue(segment=segment)
     # THEN
     assert expected == got
+
+
+def test_call_revenue(vgr_model):
+    # GIVEN
+    # WHEN
+    got = vgr_model("revenue")
+    # THEN
+    assert 729529000.0 == got
+
+
+@pytest.mark.parametrize(
+    "segment,expected",
+    [
+        ("tobacco", 329496000.0),
+        ("real estate", 400033000.0),
+    ]
+)
+def test_call_revenue_segment(vgr_model, segment, expected):
+    # GIVEN
+    # WHEN
+    got = vgr_model("revenue", segment=segment)
+    # THEN
+    assert expected == got
