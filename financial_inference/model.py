@@ -10,6 +10,7 @@ class Model:
     ModelMapping = {
         "revenue": {"path": ["income statement", "revenue"]},
         "cogs": {"path": ["income statement", "cogs"]},
+        "gross profit": {"path": ["income statement", "gross profit"]},
         "diluted eps": {"path": ["income statement", "net income per diluted share"]},
     }
 
@@ -18,7 +19,7 @@ class Model:
             self.obj = json.load(fin)
             self.period_data = self.obj["data"]
 
-    def value(self, path, year=None, quarter=None, half=None, segment=None, fn=float):
+    def get(self, path, year=None, quarter=None, half=None, segment=None):
         o = self.period_data
         if year:
             o = [x for x in o if x.get("period", {}).get("year") == year]
@@ -34,6 +35,10 @@ class Model:
             o = segments[0]
         for p in path:
             o = o[p]
+        return o
+
+    def value(self, path, year=None, quarter=None, half=None, segment=None, fn=float):
+        o = self.get(path, year, quarter, half, segment)
         if isinstance(o, dict):
             if "total" in o:
                 o = o["total"]
